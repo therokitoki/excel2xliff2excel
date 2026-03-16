@@ -1,0 +1,10 @@
+_old/script.py
+core/__pycache__/__init__.cpython-311.pyc
+core/__pycache__/validator.cpython-311.pyc
+core/__pycache__/converter.cpython-311.pyc
+gui/__pycache__/__init__.cpython-311.pyc
+gui/__pycache__/app.cpython-311.pyc
+source.xlsx
+target.xlsx
+test.xliff
+test.xlsx
