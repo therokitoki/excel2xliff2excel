@@ -23,12 +23,17 @@ class XliffConverter:
         total_cells = sum(
             1
             for ws in wb_source.worksheets
-            if ws.sheet_state == "visible"
+            if (not hidden or ws.sheet_state == "visible") # Respetamos el filtro de ocultas
             for row in ws.iter_rows()
-            if not ws.row_dimensions[row[0].row].hidden
+            if (not hidden or not ws.row_dimensions[row[0].row].hidden)
             for cell in row
-            if not ws.column_dimensions[cell.column_letter].hidden
+            if (not hidden or not ws.column_dimensions[cell.column_letter].hidden)
+            and cell.value is not None and str(cell.value).strip() != "" # 👈 EL FILTRO CLAVE
         )
+
+        # avoid div0
+        if total_cells == 0:
+            total_cells = 1
 
         counter = 0
         unit_id = 1
@@ -61,6 +66,9 @@ class XliffConverter:
                     src = "" if src_value is None else str(src_value)
                     tgt = "" if tgt_value is None else str(tgt_value)
 
+                    if not src: 
+                        continue
+
                     c_hash = generate_hash(src) 
 
                     is_formula = cell.data_type == "f"
@@ -85,7 +93,7 @@ class XliffConverter:
 
                     trans_unit.set(
                         "state",
-                        "translated" if tgt.strip() else "needs-translation"
+                        "translated" if tgt.strip() else "needs-l10n"
                     )
 
                     unit_id += 1
