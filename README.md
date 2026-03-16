@@ -1,4 +1,4 @@
-# excel2xliff2excel
+# excel2xliff2excel <img src="data/excel2xliff2excel.ico" width="100" height="100">
 
 This is a set of Python tools developed to handle a specific headache: moving translation data between Excel and XLIFF when standard TMS (Translation Management System) workflows break down.
 
