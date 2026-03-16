@@ -1,6 +1,6 @@
-# excel2xliff2excel <img src="data/excel2xliff2excel.ico" width="100" height="100">
+# <img src="assets/Excel2xliff_64.png" width="64" height="64"> Excel 2 Xliff 2 Excel 
 
-This is a set of Python tools developed to handle a specific headache: moving translation data between Excel and XLIFF when standard TMS (Translation Management System) workflows break down.
+<img src="assets/Excel2xliff_16.png" width="16" height="16"> This is a set of Python tools developed to handle a specific headache: moving translation data between Excel and XLIFF when standard TMS (Translation Management System) workflows break down.
 
 I built this because we had to switch TMS platforms mid-project and couldn't export our progress as XLIFFs. The only thing we had was a partially translated Excel file, so I needed a way to "reconstruct" that into an XLIFF to avoid losing weeks of work.
 
