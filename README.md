@@ -7,7 +7,7 @@ I built this because we had to switch TMS platforms mid-project and couldn't exp
 ## What it actually does
 - Merged XLIFF Generation: You give it a Source Excel and a Target Excel (with your current translations), and it spits out a merged XLIFF 1.2 file.
 - Hash-based Verification: Every segment gets an MD5 hash of the source text. If the source changes later, the tool knows, preventing you from accidentally injecting translations into the wrong cells.
-- Target Excel Generation: Allows you to generate a finalized Target Excel file by injecting an updated/localized XLIFF back into the original Source Excel structure.- Optional settings: Ignore
+- Target Excel Generation: Allows you to generate a finalized Target Excel file by injecting an updated/localized XLIFF back into the original Source Excel structure.
 * Customizable Extraction:
     * Option to ignore hidden cells to avoid translating internal notes or metadata.
     * Option to leave target segments blank if they are identical to the source.
